@@ -42,15 +42,7 @@ class Lider extends Empleado {
     }
 
     presentarEquipo() {
-        let fraseinicial = `Los nombres del equipo son de ${this.nombre}: `
-
-        for (const empleado of this.equipo) {
-            if (empleado.activo) {
-                fraseinicial = fraseinicial + ` 
-                * ${empleado.nombre} `
-            }
-        }
-        return fraseinicial;
+        return `Mi equipo está formado por: ${this.equipo.join(", ")}.`;
     }
 
     agregarMiembro(empleado) {
@@ -103,11 +95,11 @@ console.log(empleado3.calcularSalarioAnual());
 console.log(empleado3.info());
 
 
-lider1.agregarMiembro(empleado1);
-lider1.agregarMiembro(empleado2);
+lider1.agregarMiembro(empleado1.nombre);
+lider1.agregarMiembro(empleado2.nombre);
 
-lider2.agregarMiembro(empleado3);
-lider2.agregarMiembro(empleado4);
+lider2.agregarMiembro(empleado3.nombre);
+lider2.agregarMiembro(empleado4.nombre);
 
 console.log(lider1.calcularSalarioAnual());
 console.log(lider2.desactivar());
